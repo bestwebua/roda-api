@@ -1,0 +1,20 @@
+detectors:
+  IrresponsibleModule:
+    enabled: false
+
+  BooleanParameter:
+    exclude:
+      - System::Loader#boot_and_track_changes
+
+  ControlParameter:
+    exclude:
+      - System::Loader#boot_and_track_changes
+
+  NestedIterators:
+    max_allowed_nesting: 2
+
+  LongParameterList:
+    max_params: 6
+
+exclude_paths:
+  - spec/support/helpers
