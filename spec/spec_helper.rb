@@ -3,8 +3,12 @@
 rspec_custom = File.join(File.dirname(__FILE__), 'support/**/*.rb')
 Dir[File.expand_path(rspec_custom)].sort.each { |file| require file unless file[/\A.+_spec\.rb\z/] }
 
+SystemEnvironmentHelpers.use_env(:test)
 require_relative '../config/system/loader'
+
 System::Loader.boot
+System::Environment.db
+DatabaseCleaner.strategy = :truncation
 
 RSpec.configure do |config|
   config.expect_with(:rspec) do |expectations|
@@ -16,10 +20,15 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.include SystemEnvironmentHelpers
   config.include SystemLoaderHelpers
   config.example_status_persistence_file_path = '.rspec_status'
   config.disable_monkey_patching!
   config.order = :random
 
   Kernel.srand(config.seed)
+
+  config.before do
+    DatabaseCleaner.clean
+  end
 end
