@@ -4,12 +4,16 @@ source 'https://rubygems.org'
 
 ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip[/-(.+)/, 1])
 
+gem 'dotenv', '~> 2.7', '>= 2.7.5'
+gem 'pg', '~> 1.2.3'
 gem 'rake', '~> 13.0', '>= 13.0.1'
 gem 'roda', '~> 3.33'
+gem 'rom', '~> 5.2.4'
+gem 'rom-repository', '~> 5.2', '>= 5.2.2'
+gem 'rom-sql', '~> 3.2'
 gem 'zeitwerk', '~> 2.3'
 
 group :development, :test do
-  gem 'dotenv', '~> 2.7', '>= 2.7.5'
   gem 'pry-byebug', '~> 3.9'
   gem 'rspec-roda', '~> 0.2.2'
 
@@ -28,6 +32,9 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner-sequel', '~> 1.8', require: false
   gem 'json_matchers', '~> 0.11.1', require: false
-  gem 'simplecov', '~> 0.17.1', require: false
+  gem 'simplecov', '~> 0.18.5', require: false
+  gem 'simplecov-lcov', '~> 0.8.0', require: false
+  gem 'undercover', '~> 0.3.4', require: false
 end

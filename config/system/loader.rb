@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
+require 'bundler'
+require 'dotenv'
 require 'listen'
 require 'zeitwerk'
 require_relative './environment'
 
+Dotenv.load('.env', ".env.#{System::Environment.current_env}")
 initializers = File.join(File.expand_path('../initializers', File.dirname(__FILE__)), '**/*.rb')
 Dir[File.expand_path(initializers)].sort.each { |file| require_relative file }
 
