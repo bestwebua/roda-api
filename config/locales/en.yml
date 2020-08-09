@@ -1,0 +1,4 @@
+en:
+  contract:
+    errors:
+      email_format: not a valid email format

@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "data": {
+              "id": "1",
+              "type": "user",
+              "attributes": {
+                  "email": "some@email.com",
+                  "created_at": "2020-08-18T06:31:18.612+03:00",
+                  "updated_at": "2020-08-18T06:31:18.612+03:00"
+              }
+          }
+      }
+  ],
+  "required": [
+      "data"
+  ],
+  "properties": {
+      "data": {
+          "$id": "#/properties/data",
+          "type": "object",
+          "title": "The data schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+              {
+                  "id": "1",
+                  "type": "user",
+                  "attributes": {
+                      "email": "some@email.com",
+                      "created_at": "2020-08-18T06:31:18.612+03:00",
+                      "updated_at": "2020-08-18T06:31:18.612+03:00"
+                  }
+              }
+          ],
+          "required": [
+              "id",
+              "type",
+              "attributes"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/data/properties/id",
+                  "type": "string",
+                  "title": "The id schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "1"
+                  ]
+              },
+              "type": {
+                  "$id": "#/properties/data/properties/type",
+                  "type": "string",
+                  "title": "The type schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": "",
+                  "examples": [
+                      "user"
+                  ]
+              },
+              "attributes": {
+                  "$id": "#/properties/data/properties/attributes",
+                  "type": "object",
+                  "title": "The attributes schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "email": "some@email.com",
+                          "created_at": "2020-08-18T06:31:18.612+03:00",
+                          "updated_at": "2020-08-18T06:31:18.612+03:00"
+                      }
+                  ],
+                  "required": [
+                      "email",
+                      "created_at",
+                      "updated_at"
+                  ],
+                  "properties": {
+                      "email": {
+                          "$id": "#/properties/data/properties/attributes/properties/email",
+                          "type": "string",
+                          "title": "The email schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                              "some@email.com"
+                          ]
+                      },
+                      "created_at": {
+                          "$id": "#/properties/data/properties/attributes/properties/created_at",
+                          "type": "string",
+                          "title": "The created_at schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                              "2020-08-18T06:31:18.612+03:00"
+                          ]
+                      },
+                      "updated_at": {
+                          "$id": "#/properties/data/properties/attributes/properties/updated_at",
+                          "type": "string",
+                          "title": "The updated_at schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": "",
+                          "examples": [
+                              "2020-08-18T06:31:18.612+03:00"
+                          ]
+                      }
+                  },
+                  "additionalProperties": false
+              }
+          },
+          "additionalProperties": false
+      }
+  },
+  "additionalProperties": false
+}
