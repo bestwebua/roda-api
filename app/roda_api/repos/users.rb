@@ -2,7 +2,7 @@
 
 module RodaApi
   module Repos
-    class User < ROM::Repository[:users]
+    class Users < ROM::Repository[:users]
       def self.new(container: System::Environment.db)
         super
       end

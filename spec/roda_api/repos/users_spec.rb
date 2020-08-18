@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RodaApi::Repos::User do
+RSpec.describe RodaApi::Repos::Users do
   let(:repo) { described_class.new }
   let(:email) { 'some@email.com' }
 

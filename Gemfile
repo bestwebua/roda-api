@@ -5,6 +5,12 @@ source 'https://rubygems.org'
 ruby(File.read(File.join(File.dirname(__FILE__), '.ruby-version')).strip[/-(.+)/, 1])
 
 gem 'dotenv', '~> 2.7', '>= 2.7.5'
+gem 'dry-auto_inject', '~> 0.7.0'
+gem 'dry-container', '~> 0.7.2'
+gem 'dry-transaction', '~> 0.13.0'
+gem 'dry-validation', '~> 1.5', '>= 1.5.3'
+gem 'fast_jsonapi', '~> 1.5'
+gem 'i18n', '~> 1.8', '>= 1.8.5'
 gem 'pg', '~> 1.2.3'
 gem 'rake', '~> 13.0', '>= 13.0.1'
 gem 'roda', '~> 3.33'
@@ -34,6 +40,7 @@ end
 group :test do
   gem 'database_cleaner-sequel', '~> 1.8', require: false
   gem 'json_matchers', '~> 0.11.1', require: false
+  gem 'rack-test', '~> 1.1', require: false
   gem 'simplecov', '~> 0.18.5', require: false
   gem 'simplecov-lcov', '~> 0.8.0', require: false
   gem 'undercover', '~> 0.3.4', require: false
