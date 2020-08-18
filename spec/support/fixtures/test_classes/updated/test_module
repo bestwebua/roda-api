@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+module TestModule
+  def self.test_method
+    '42'
+  end
+end

@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "email": [
+              "is missing"
+          ]
+      }
+  ],
+  "required": [
+      "email"
+  ],
+  "properties": {
+      "email": {
+          "$id": "#/properties/email",
+          "type": "array",
+          "title": "The email schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+              [
+                  "is missing"
+              ]
+          ],
+          "additionalItems": true,
+          "items": {
+              "$id": "#/properties/email/items/0",
+              "type": "string",
+              "title": "The first items schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                  "is missing"
+              ]
+          }
+      }
+  },
+  "additionalProperties": false
+}
