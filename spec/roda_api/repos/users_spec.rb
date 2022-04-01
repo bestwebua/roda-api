@@ -5,7 +5,7 @@ RSpec.describe RodaApi::Repos::Users do
   let(:email) { 'some@email.com' }
 
   describe '#create' do
-    subject(:user) { repo.create(email: email) }
+    subject(:user) { repo.create(email:) }
 
     it 'creates a user' do
       expect { user }.to change { repo.all.size }.from(0).to(1)
@@ -21,7 +21,7 @@ RSpec.describe RodaApi::Repos::Users do
     subject(:users) { repo.all }
 
     it 'returns users collection' do
-      repo.create(email: email)
+      repo.create(email:)
       expect(users).to be_an_instance_of(Array)
     end
   end

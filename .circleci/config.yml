@@ -1,13 +1,13 @@
 defaults: &defaults
   working_directory: ~/roda-api
   docker:
-    - image: circleci/ruby:2.7.1-node
+    - image: cimg/ruby:3.1.1-node
       environment:
         RACK_ENV: test
         DB_HOST: 127.0.0.1
         DB_USER: root
 
-    - image: circleci/postgres:12-alpine
+    - image: cimg/postgres:14.2
       environment:
         POSTGRES_USER: root
         POSTGRES_PASSWORD: ""
@@ -27,7 +27,9 @@ references:
   bundle_install: &bundle_install
     run:
       name: Installing gems
-      command: bundle install --path vendor/bundle
+      command: |
+            bundle config set --local path 'vendor/bundle'
+            bundle install
 
   save_bundle_cache: &save_bundle_cache
     save_cache:

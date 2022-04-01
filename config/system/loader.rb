@@ -8,7 +8,7 @@ require_relative './environment'
 
 Dotenv.load('.env', ".env.#{System::Environment.current_env}")
 initializers = File.join(File.expand_path('../initializers', File.dirname(__FILE__)), '**/*.rb')
-Dir[File.expand_path(initializers)].sort.each { |file| require_relative file }
+Dir[File.expand_path(initializers)].each { |file| require_relative file }
 require_relative './container'
 
 module System
