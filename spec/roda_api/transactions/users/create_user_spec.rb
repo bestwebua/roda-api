@@ -7,7 +7,7 @@ RSpec.describe RodaApi::Transactions::Users::CreateUser do
 
   describe 'Success' do
     let(:email) { 'some@email.com' }
-    let(:params) { { email: email } }
+    let(:params) { { email: } }
 
     it 'creates new user' do
       expect { transaction }.to change { users_repo.all.size }.from(0).to(1)

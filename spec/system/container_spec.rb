@@ -5,7 +5,7 @@ RSpec.describe System::Container do
 
   describe 'injected dependencies' do
     let(:dummy_class_instance) do
-      DummyClass = Class.new do # rubocop:disable RSpec/LeakyConstantDeclaration
+      DummyClass = Class.new do # rubocop:disable Lint/ConstantDefinitionInBlock, RSpec/LeakyConstantDeclaration
         include System::Import[
           contract: 'contracts.users.create_user',
           repository: 'repos.users',
