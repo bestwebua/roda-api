@@ -3,14 +3,14 @@
 RSpec.describe RodaApi::Contracts::Users::CreateUser do
   subject(:contract) { described_class.new.call(params) }
 
-  let(:params) { { email: email } }
+  let(:params) { { email: } }
 
   describe 'Success' do
     context 'with valid params' do
       let(:email) { 'valid@email.com' }
 
       it 'returns valid contract' do
-        expect(contract.to_h).to eq(email: email)
+        expect(contract.to_h).to eq(email:)
         expect(contract).to be_success
       end
     end
