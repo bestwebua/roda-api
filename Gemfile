@@ -13,7 +13,7 @@ gem 'fast_jsonapi', '~> 1.5'
 gem 'i18n', '~> 1.10'
 gem 'pg', '~> 1.3', '>= 1.3.5'
 gem 'rake', '~> 13.0', '>= 13.0.6'
-gem 'roda', '~> 3.54'
+gem 'roda', '~> 3.55', '>= 3.55.0'
 gem 'rom', '~> 5.2', '>= 5.2.6'
 gem 'rom-repository', '~> 5.2', '>= 5.2.2'
 gem 'rom-sql', '~> 3.5'
@@ -40,7 +40,7 @@ end
 group :test do
   gem 'database_cleaner-sequel', '~> 2.0', '>= 2.0.2', require: false
   gem 'json_matchers', '~> 0.11.1', require: false
-  gem 'rack-test', '~> 1.1', require: false
+  gem 'rack-test', '~> 2.0', '>= 2.0.0', require: false
   gem 'simplecov', '~> 0.21.2', require: false
   gem 'simplecov-lcov', '~> 0.8.0', require: false
   gem 'undercover', '~> 0.4.4', require: false
