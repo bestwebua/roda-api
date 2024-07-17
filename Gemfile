@@ -26,11 +26,11 @@ group :development, :test do
   # Code quality
   gem 'bundler-audit', '~> 0.9.0.1', require: false
   gem 'fasterer', '~> 0.9.0', require: false
-  gem 'overcommit', '~> 0.58.0', require: false
+  gem 'overcommit', '~> 0.59.0', require: false
   gem 'reek', '~> 6.1', require: false
-  gem 'rubocop', '~> 1.26', '>= 1.26.1', require: false
-  gem 'rubocop-performance', '~> 1.13', '>= 1.13.3', require: false
-  gem 'rubocop-rspec', '~> 2.9', require: false
+  gem 'rubocop', '~> 1.27', '>= 1.27.0', require: false
+  gem 'rubocop-performance', '~> 1.14', '>= 1.14.0', require: false
+  gem 'rubocop-rspec', '~> 2.10', '>= 2.10.0', require: false
 end
 
 group :development do
